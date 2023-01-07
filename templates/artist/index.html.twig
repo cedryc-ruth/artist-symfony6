@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des artistes{% endblock %}
+
+{% block body %}
+    <h1>Liste des {{ resource }}</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for artist in artists %}
+            <tr>
+                <td>{{ artist.firstname }}</td>
+                <td>
+	                <a href="{{ path('artist_show', { id: artist.id }) }}">{{ artist.lastname }}</a>
+	            </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <nav><a href="{{ path('artist_new') }}">Ajouter</a></nav>
+{% endblock %}

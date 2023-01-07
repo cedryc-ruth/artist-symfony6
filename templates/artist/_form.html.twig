@@ -1,0 +1,20 @@
+{{ form_start(form, {'method': http_method, attr:{novalidate: 'novalidate'}}) }}
+    {% if not form.vars.valid %}
+    <div class="errors">
+        {{ form_errors(form) }}
+    </div>
+    {% endif %}
+
+    <div {% if form.firstname.vars.errors is not empty %}class="is-invalid"{% endif %}>
+        {{ form_label(form.firstname, 'Prénom') }} {{ form_widget(form.firstname) }}
+        {{ form_help(form.firstname) }}
+        {{ form_errors(form.firstname) }}
+    </div>
+    <div>
+        {{ form_label(form.lastname, 'Nom') }} {{ form_widget(form.lastname) }}
+        {{ form_help(form.lastname) }}
+        {{ form_errors(form.lastname) }}
+    </div>
+    {{ form_row(form.save, { 'label': button_label }) }}
+
+{{ form_end(form) }}

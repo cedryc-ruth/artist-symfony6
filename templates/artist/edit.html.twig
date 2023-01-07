@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un artiste{% endblock %}
+
+{% block body %}
+    <h2>Modifier un artiste</h2>
+
+    {{ include('artist/_form.html.twig', {'http_method': 'PUT','button_label': 'Modifier'}) }}
+
+    <p><a href="{{ path('artist_show', {'id': artist.id}) }}">Annuler</a></p>
+
+    <nav><a href="{{ path('artist_index') }}">Retour à l'index</a></nav>
+
+{#    {{ include('artist/_delete_form.html.twig') }}  #}
+{% endblock %}
