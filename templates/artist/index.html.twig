@@ -10,6 +10,7 @@
             <tr>
                 <th>Firstname</th>
                 <th>Lastname</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -17,8 +18,12 @@
             <tr>
                 <td>{{ artist.firstname }}</td>
                 <td>
-	                <a href="{{ path('artist_show', { id: artist.id }) }}">{{ artist.lastname }}</a>
+	                {{ artist.lastname }}
 	            </td>
+                <td>
+                    <a href="{{ path('artist_show', { id: artist.id }) }}">Afficher</a>
+                    {{ include('artist/_delete_form.html.twig') }}
+                </td>
             </tr>
         {% endfor %}
         </tbody>

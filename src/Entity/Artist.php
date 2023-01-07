@@ -18,7 +18,7 @@ class Artist
     #[ORM\Column(length: 60)]
     #[Assert\Length(
         min: 2,
-        max: 3,
+        max: 60,
         minMessage: 'Your firstname must be at least {{ limit }} characters long',
         maxMessage: 'Your firstname cannot be longer than {{ limit }} characters',
     )]
@@ -27,7 +27,7 @@ class Artist
     #[ORM\Column(length: 60)]
     #[Assert\Length(
         min: 2,
-        max: 4,
+        max: 60,
         minMessage: 'Your lastname must be at least {{ limit }} characters long',
         maxMessage: 'Your lastname cannot be longer than {{ limit }} characters',
     )]

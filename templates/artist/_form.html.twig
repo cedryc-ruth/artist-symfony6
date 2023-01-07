@@ -1,4 +1,8 @@
+{# Pour tester la validation
 {{ form_start(form, {'method': http_method, attr:{novalidate: 'novalidate'}}) }}
+#}
+
+{{ form_start(form, {'method': http_method}) }}
     {% if not form.vars.valid %}
     <div class="errors">
         {{ form_errors(form) }}
