@@ -20,15 +20,16 @@ security:
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
             form_login:
-                login_path: app_login
-                check_path: app_login
+                login_path: app_login   # Show Login form
+                check_path: app_login   # Handle Login form
+                default_target_path: artist_index
                 enable_csrf: true
 
             logout:
                 path: app_logout
 
                 # where to redirect after logout
-                # target: app_any_route
+                target: artist_index
 
             # configure the maximum login attempts
             login_throttling:
